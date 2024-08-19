@@ -29,13 +29,18 @@ export default function Generator() {
         title={"Pick your poison"}
         description={"Select the workout you wish to endure."}
       />
-      {Object.keys(WORKOUTS).map((type, typeIndex) => {
-        return (
-          <button key={typeIndex}>
-            <p>{type}</p>
-          </button>
-        );
-      })}
+      <div className="grid grid-cols-2 sm:grid-cols-4">
+        {Object.keys(WORKOUTS).map((type, typeIndex) => {
+          return (
+            <button
+              className="bg-slate-950 border border-blue-400 duration:200 hover:border-blue-600 py-3 rounded-lg "
+              key={typeIndex}
+            >
+              <p className="capitalize">{type.replaceAll("_", " ")}</p>
+            </button>
+          );
+        })}
+      </div>
     </SectionWrapper>
   );
 }
