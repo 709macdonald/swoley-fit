@@ -41,6 +41,15 @@ export default function Generator() {
           );
         })}
       </div>
+      <Header
+        index={"02"}
+        title={"Lock on targets"}
+        description={"Select the muscles judged for annihilation"}
+      />
+      <div>
+        <p>Select muscle groups</p>
+        <i className="fa-solid fa-caret-down"></i>
+      </div>
     </SectionWrapper>
   );
 }
