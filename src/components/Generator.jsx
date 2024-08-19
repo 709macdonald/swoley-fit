@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function Generator() {
-  return <div>Generator</div>;
+  return <div className="min-h-screen"></div>;
 }
