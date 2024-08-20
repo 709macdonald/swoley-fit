@@ -18,8 +18,17 @@ function Header(props) {
   );
 }
 
-export default function Generator() {
+export default function Generator(props) {
   const [showModal, setShowModal] = useState(false);
+  const {
+    muscles,
+    setMuscles,
+    poison,
+    setPoison,
+    goal,
+    setGoal,
+    updateWorkout,
+  } = props;
 
   function toggleModal() {
     setShowModal(!showModal);
@@ -61,6 +70,23 @@ export default function Generator() {
           <i className="fa-solid absolute right-3 top-1/2 -translate-y-1/2 fa-caret-down"></i>
         </button>
         {showModal && <div>modal</div>}
+      </div>
+      <Header
+        index={"01"}
+        title={"Pick your poison"}
+        description={"Select the workout you wish to endure."}
+      />
+      <div className="grid grid-cols-2 sm:grid-cols-4">
+        {Object.keys(SCHEMES).map((scheme, schemeIndex) => {
+          return (
+            <button
+              className="bg-slate-950 border border-blue-400 duration:200 hover:border-blue-600 p-3 rounded-lg "
+              key={schemeIndex}
+            >
+              <p className="capitalize">{scheme.replaceAll("_", " ")}</p>
+            </button>
+          );
+        })}
       </div>
     </SectionWrapper>
   );
